@@ -43,13 +43,8 @@ export const NavBar = () => {
           <li>
             <Link to="/Cart">Cart</Link>
           </li>
-          <li>
-            <Link
-              className="bg-black text-white py-3 px-5 hover:bg-green-700 duration-200"
-              to="/OrderOnline"
-            >
-              Order Online
-            </Link>
+          <li className="bg-black text-white w-32 h-10 pt-2 text-center hover:bg-green-700 duration-200">
+            <Link to="/OrderOnline">Order Online</Link>
           </li>
         </ul>
       </nav>

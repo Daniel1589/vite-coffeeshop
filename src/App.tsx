@@ -1,11 +1,11 @@
 import { NavBar } from "./components/NavBar/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Shop } from "./components/NavBar/Shop";
-import { About } from "./components/NavBar/About";
-import { LocationHours } from "./components/NavBar/LocationHours";
-import { Login } from "./components/NavBar/LogIn";
-import { Cart } from "./components/NavBar/Cart";
-import { OrderOnline } from "./components/NavBar/OrderOnline";
+import { Shop } from "./pages/Shop";
+import { About } from "./pages/About";
+import { LocationHours } from "./pages/LocationHours";
+import { Login } from "./pages/LogIn";
+import { Cart } from "./pages/Cart";
+import { OrderOnline } from "./pages/OrderOnline";
 export const App = () => {
   return (
     <div>

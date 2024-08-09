@@ -3,7 +3,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 export const NavBar = () => {
   return (
-    <div className="fixed top-0 w-full">
+    <div className="fixed z-50 pt-12 w-full">
       <nav className=" bg-amber-100 py-5 flex">
         <ul className="flex gap-10 pl-12 items-center font-normal">
           <li>

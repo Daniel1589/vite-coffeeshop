@@ -3,6 +3,8 @@ import { TextBlock } from "../../components/TextBlock";
 import { Display3Block } from "../../components/Display3Block";
 import { ImageBlock } from "../../components/ImageBlock";
 import { Link } from "react-router-dom";
+import { CarouselBlock } from "../CarouselBlock";
+import { Footer } from "../Footer";
 export const MainPage = () => {
   return (
     <div>
@@ -20,6 +22,8 @@ export const MainPage = () => {
       <TextBlock />
       <Display3Block />
       <ImageBlock />
+      <CarouselBlock />
+      <Footer />
     </div>
   );
 };

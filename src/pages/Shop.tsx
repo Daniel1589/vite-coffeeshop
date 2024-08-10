@@ -1,3 +1,3 @@
 export const Shop = () => {
-  return <div>Huh?</div>;
+  return <div>Shop page TBC</div>;
 };

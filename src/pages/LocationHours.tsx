@@ -1,3 +1,3 @@
 export const LocationHours = () => {
-  return <div></div>;
+  return <div>Location & Hours Page TBC</div>;
 };

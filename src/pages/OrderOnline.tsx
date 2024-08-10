@@ -1,3 +1,3 @@
 export const OrderOnline = () => {
-  return <div></div>;
+  return <div>Order Online page TBC</div>;
 };

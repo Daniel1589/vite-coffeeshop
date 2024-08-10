@@ -4,7 +4,7 @@ import Pic3 from "../pictures/pic3.jpg";
 
 export const Display3Block = () => {
   return (
-    <div className="bg-amber-100 px-16">
+    <div className="bg-amber-100 px-16 pb-14">
       <h1 className="text-center text-5xl font-medium pt-16 pb-16">
         GRAB IT ON THE GO
       </h1>

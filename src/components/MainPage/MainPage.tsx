@@ -5,7 +5,14 @@ import { ImageBlock } from "../../components/ImageBlock";
 import { Link } from "react-router-dom";
 import { CarouselBlock } from "../CarouselBlock";
 import { Footer } from "../Footer";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 export const MainPage = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div>
       <div className="relative">

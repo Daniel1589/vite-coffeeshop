@@ -8,6 +8,7 @@ import { Cart } from "./pages/Cart";
 import { OrderOnline } from "./pages/OrderOnline";
 import { Announcement } from "./components/Announcement";
 import { MainPage } from "./components/MainPage/MainPage";
+import { Subscribe } from "./pages/Subscribe";
 export const App = () => {
   return (
     <div>
@@ -25,6 +26,7 @@ export const App = () => {
             <Route path="/Login" element={<Login />}></Route>
             <Route path="/Cart" element={<Cart />}></Route>
             <Route path="/OrderOnline" element={<OrderOnline />}></Route>
+            <Route path="/Subscribe" element={<Subscribe />}></Route>
           </Routes>
         </div>
       </Router>

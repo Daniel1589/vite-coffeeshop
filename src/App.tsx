@@ -1,5 +1,11 @@
 import { NavBar } from "./components/NavBar/NavBar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Shop } from "./pages/Shop";
 import { About } from "./pages/About";
 import { LocationHours } from "./pages/LocationHours";
@@ -18,7 +24,29 @@ export const App = () => {
           <NavBar />
         </div>
         <div className="pt-[130px]">
-          <Routes>
+          <AnimatedRoutes />
+        </div>
+      </Router>
+    </div>
+  );
+};
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  return (
+    <div>
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          classNames={{
+            enter: "opacity-0",
+            enterActive: "opacity-100 transition-opacity duration-300 ease-in",
+            exit: "opacity-100",
+            exitActive: "opacity-0 transition-opacity duration-300 ease-out",
+          }}
+          timeout={300}
+        >
+          <Routes location={location}>
             <Route path="/" element={<MainPage />}></Route>
             <Route path="/Shop" element={<Shop />}></Route>
             <Route path="/About" element={<About />}></Route>
@@ -28,8 +56,8 @@ export const App = () => {
             <Route path="/OrderOnline" element={<OrderOnline />}></Route>
             <Route path="/Subscribe" element={<Subscribe />}></Route>
           </Routes>
-        </div>
-      </Router>
+        </CSSTransition>
+      </TransitionGroup>
     </div>
   );
 };

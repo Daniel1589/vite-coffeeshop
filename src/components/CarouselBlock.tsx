@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import { imageSlides } from "../constants/ImageSlides";
-
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 interface ArrowProps {
   onClick: () => void;
 }
@@ -41,9 +41,10 @@ export const CarouselBlock: React.FC = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    draggable: false,
     className: "slides",
-    nextArrow: <CustomNextArrow onClick={() => {}} />, // Provide an empty function
-    prevArrow: <CustomPrevArrow onClick={() => {}} />, // Provide an empty function
+    nextArrow: <CustomNextArrow onClick={() => {}} />,
+    prevArrow: <CustomPrevArrow onClick={() => {}} />,
   };
 
   return (
@@ -53,18 +54,21 @@ export const CarouselBlock: React.FC = () => {
       </div>
 
       <Slider {...settings}>
-        {imageSlides.map((slide, index) => (
-          <div key={index}>
-            <img
-              className="w-[450px] h-[450px] m-auto"
-              src={slide.src}
-              alt={slide.alt}
-            />
-            <div className="pl-[69px] pt-4">
-              <h1 className="text-l font-medium">{slide.title}</h1>
-              <p className="text-gray-600 tracking-tight">{slide.price}</p>
+        {/* Added Link component to wrap each slide with dynamic URL */}
+        {imageSlides.map((slide) => (
+          <Link to={`/blend/${slide.id}`} key={slide.id}>
+            <div>
+              <img
+                className="w-[450px] h-[450px] m-auto"
+                src={slide.src}
+                alt={slide.alt}
+              />
+              <div className="pl-[69px] pt-4">
+                <h1 className="text-l font-medium">{slide.title}</h1>
+                <p className="text-gray-600 tracking-tight">{slide.price}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </Slider>
       <div className="flex items-center justify-center py-20">

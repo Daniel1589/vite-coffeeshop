@@ -1,10 +1,10 @@
 import mainPageImg from "../../pictures/mainPage.jpg";
 import { TextBlock } from "../../components/TextBlock";
 import { Display3Block } from "../../components/Display3Block";
+import { threeBlock1 } from "../../constants/ImageSlides";
 import { ImageBlock } from "../../components/ImageBlock";
 import { Link } from "react-router-dom";
 import { CarouselBlock } from "../CarouselBlock";
-import { Footer } from "../Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -26,11 +26,13 @@ export const MainPage = () => {
           </Link>
         </div>
       </div>
-      <TextBlock />
-      <Display3Block />
+      <TextBlock
+        text="Globally sourced but locally brewed our flavorful, full-bodied roasts
+        taste as good as they smell."
+      />
+      <Display3Block header="GRAB IT ON THE GO" slides={threeBlock1} />
       <ImageBlock />
       <CarouselBlock />
-      <Footer />
     </div>
   );
 };
